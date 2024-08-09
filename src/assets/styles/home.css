@@ -1,0 +1,12 @@
+#manager,#services,#product,#connection{
+    @apply sections
+}
+#product{
+    @apply bg-bgProducts flex flex-col gap-8 lg:flex-row
+}
+#product .context{
+    @apply flex flex-col p-1 gap-12 mt-12 py-8 
+}
+.context-count{
+    @apply flex flex-nowrap items-center
+}

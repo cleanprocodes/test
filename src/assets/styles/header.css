@@ -1,0 +1,9 @@
+.header{
+    @apply flex flex-wrap lg:justify-evenly p-1 justify-between 2xl:gap-48 items-center shadow-lg z-50 fixed 2xl:sticky w-full top-0 left-0 right-0 bg-white
+}
+.header-navbar{
+    @apply md:w-auto w-0 hidden md:flex md:static flex-col bg-slate md:flex-row transition-all duration-500 gap-9 py-4 px-2 md:bg-white rounded-sm 
+}
+.menu-span.toggler~.header-navbar{
+    @apply flex w-full md:w-auto 
+}

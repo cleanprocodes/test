@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+/* helper */
+@import "../src/assets/styles/helper.css";
+/* header */
+@import "../src/assets/styles/header.css";
+/* home */
+@import "../src/assets/styles/home.css";
+@import "tailwindcss/utilities";
