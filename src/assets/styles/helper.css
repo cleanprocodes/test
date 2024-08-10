@@ -39,7 +39,7 @@ body{
     @apply px-4 py-2 md:px-2 md:py-1 lg:px-4 lg:py-2 rounded-lg md:max-w-fit
 }
 .btn--primary{
-    @apply bg-primary text-white
+    @apply bg-primary text-white hover:opacity-75
 }
 .btn--primary:focus-within{
     @apply text-primary bg-white border-primary
@@ -52,6 +52,9 @@ body{
 }
 .disabled{
     @apply pointer-events-none border
+}
+.icon{
+    @apply max-w-8 max-h-8 hover:scale-90
 }
 /* differ */
 .link{
@@ -90,6 +93,9 @@ body{
 .box-buttons{
     @apply flex gap-7 flex-row-reverse items-center justify-center
 }
+.form{
+    @apply border focus-within:outline outline-email flex py-2 px-8 justify-between border-email max-w-[820px] rounded-2xl shadow-sm w-full
+}
 /* inputs */
 .box-search{
     @apply bg-white w-full lg:absolute -top-[64%] left-[50%] lg:-translate-x-[50%] lg:w-[80%] shadow-lg py-6 px-1 md:p-12 flex flex-col gap-4 z-10
@@ -97,7 +103,7 @@ body{
 .label-search{
     @apply bg-bgSearch p-3 flex items-center gap-1 relative z-10 border border-white focus-within:border-primary
 }
-#search{
+#search,#email{
     @apply appearance-none focus-within:text-primary border-0 outline-none caret-primary
 }
 /* font */
@@ -110,12 +116,36 @@ body{
 .description{
     @apply text-description px-1 text-lg md:w-10/12 lg:w-10/12 2xl:w-8/12
 }
+#services .description{
+    @apply text-gray font-normal px-1 text-lg lg:text-start lg:w-10/12 xl:w-6/12 2xl:w-4/12
+}
+#connection .description{
+    @apply font-normal px-1 text-lg lg:w-10/12 xl:w-6/12 2xl:w-7/12 text-center
+}
 .subheading{
     @apply text-xl
 }
 .h2{
     @apply text-4xl sm:text-6xl font-medium
 }
+.h2.heading{
+    @apply w-full text-center lg:text-start lg:w-10/12 2xl:w-7/12
+}
+.h3{
+    @apply text-3xl sm:text-5xl font-medium
+}
+.h3.heading{
+    @apply w-full text-center lg:text-start lg:w-10/12 xl:w-6/12 2xl:w-4/12
+}
 .h4{
     @apply text-xl sm:text-3xl font-medium
+}
+.h5{
+    @apply text-lg sm:text-xl font-medium
+}
+.h6{
+    @apply text-lg sm:text-2xl font-semibold
+}
+.h5.heading{
+    @apply text-3xl sm:text-5xl font-bold
 }

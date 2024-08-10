@@ -1,4 +1,4 @@
-#manager,#services,#product,#connection{
+#manager,#product,#connection{
     @apply sections
 }
 #product{
@@ -10,3 +10,31 @@
 .context-count{
     @apply flex flex-nowrap items-center
 }
+#manager{
+    @apply flex flex-col lg:flex-row items-center gap-20 mt-44
+}
+.manager-images{
+    @apply overflow-hidden lg:w-[50%] flex justify-end relative
+}
+.manager-image{
+    @apply fit-image max-h-[490px] max-w-[516px] rounded-lg
+}
+.manager-bg{
+    @apply w-[80%] h-[70%] 2xl:absolute top-[15%] -z-10 rounded-lg bg-bgManager
+}
+#services{
+    @apply bg-bgServices flex flex-col gap-20 pt-20 pb-32 h-auto px-2 sm:px-6 lg:px-12 xl:px-28 mt-64
+}
+.services-row1{
+    @apply flex flex-col justify-center md:flex-row gap-10 md:gap-32 items-center
+}
+.services-row2{
+    @apply flex items-center justify-center
+}
+.services-row2-box{
+    @apply bg-gray w-[380px] h-[443px] flex flex-col gap-3 py-12 px-7 text-center
+}
+#connection{
+    @apply flex flex-col items-center justify-center py-12 md:py-32 xl:py-56 gap-12
+}
+

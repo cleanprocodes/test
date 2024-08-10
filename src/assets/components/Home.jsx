@@ -2,6 +2,10 @@ import React from 'react'
 import Header from '../repeater/Header'
 import Float from '../repeater/Float'
 import ProductSection from './../repeater/ProductSection';
+import ManagerSection from './../repeater/ManagerSection';
+import ServicesSection from './../repeater/ServicesSection';
+import ConnectionSection from './../repeater/ConnectionSection';
+import Footer from '../repeater/Footer';
 
 
 
@@ -16,31 +20,9 @@ function Home() {
         <ConnectionSection />
         <Float />
       </article>
+      <Footer/>
     </>
   )
 }
 
 export default Home
-
-
-//manager-section
-function ManagerSection() {
-  return (
-    <section id='manager'>
-    </section>
-  )
-}
-
-//services-section
-function ServicesSection() {
-  return (
-    <section id='services'></section>
-  )
-}
-
-//connection-section
-function ConnectionSection() {
-  return (
-    <section id='connection'></section>
-  )
-}

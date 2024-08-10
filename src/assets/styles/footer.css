@@ -1,0 +1,18 @@
+#footer{
+    @apply bg-footer py-6 px-20 text-white grid md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-28 lg:gap-44 xl:gap-56 items-baseline
+}
+.footer-logo{
+    @apply flex items-center gap-4
+}
+.footer-description{
+    @apply gap-2 flex flex-col col-span-2
+}
+.footer-links,.footer-social{
+    @apply flex flex-col gap-6
+}
+.footer-box{
+    @apply flex flex-col gap-4
+}
+.footer-box-social{
+    @apply flex items-center justify-between
+}

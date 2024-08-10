@@ -6,4 +6,6 @@
 @import "../src/assets/styles/header.css";
 /* home */
 @import "../src/assets/styles/home.css";
+/* footer */
+@import "../src/assets/styles/footer.css";
 @import "tailwindcss/utilities";
