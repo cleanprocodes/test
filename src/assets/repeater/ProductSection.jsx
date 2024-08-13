@@ -125,7 +125,7 @@ function ProductSection() {
             <div className='relative sm:p-4'>
                 <Search />
             </div>
-            <div>
+            <div id='productBox'>
                 <header>
                     <h2 className='h2 text-center mt-12 lg:mt-44 xl:mt-64'>محصولات سخت افزاری</h2>
                     <p className="subheading text-center mt-4">در سالهای دور لیزر های گازکربنیک پرقدرت جایگاه ویژه ای در صنعت برش لیزری داشتند . اما با ورود لیزرهای حالت جامد علی الخصوص لیزرهای فیبر </p>

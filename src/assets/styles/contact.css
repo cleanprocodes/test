@@ -1,0 +1,30 @@
+.contact-details{
+    @apply bg-bgContact text-white py-4 md:py-16 lg:py-24 xl:py-32 mt-12 sm:mt-14 2xl:mt-0 px-2 md:px-8 lg:px-14 xl:px-20 flex flex-col lg:flex-row relative
+}
+.contact-details-context{
+    @apply flex flex-col gap-14 lg:w-[50%]
+}
+.contact-details-img{
+    @apply hidden lg:block lg:w-[50%] 2xl:max-w-[600px] mt-10 absolute left-0
+}
+.contact-address{
+    @apply my-1 sm:my-10 md:my-20 lg:my-36 xl:my-56 flex flex-col lg:flex-row items-center gap-20 justify-center 
+}
+.contact-address-context{
+    @apply text-xl 
+}
+.contact-address-row{
+    @apply flex flex-row gap-3 my-9
+}
+.contact-box{
+    @apply relative flex items-center justify-center lg:w-[40%]
+}
+.contact-box .borderbox{
+    @apply hidden absolute top-0 right-0 -rotate-12 w-full h-full rounded-2xl xl:block border border-primary -z-10
+}
+.contact-box .borderbox:last-of-type{
+    @apply hidden absolute top-0 right-0 -rotate-[18deg] w-full h-full rounded-2xl xl:block border border-primary -z-10
+}
+.contact-form{
+    @apply flex flex-col items-center justify-center gap-9 md:flex-row mt-10 sm:mt-0
+}

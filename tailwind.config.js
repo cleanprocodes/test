@@ -20,7 +20,10 @@ export default {
       bgServices:"#4A5B73",
       services:"#1C0902",
       email:"#33A593",
-      footer:"#1A1A1A"
+      footer:"#1A1A1A",
+      bgNewest:"#FCFBFC",
+      bgContact:"#002A55",
+      bgInputs:"#EDF6FF"
     },
     extend: {
       fontFamily:{

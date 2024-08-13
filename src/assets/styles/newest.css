@@ -1,0 +1,18 @@
+.newest-header{
+    @apply flex flex-col gap-4 lg:gap-11 
+}
+.newest-header-boximages{
+    @apply lg:w-[50%] gap-5 flex flex-col lg:flex-row
+}
+.newest-header-images{
+    @apply flex lg:flex-col gap-2 
+}
+.newest-description-box{
+    @apply bg-bgNewest flex flex-col lg:flex-row py-14 gap-11 px-10 sm:px-20 md:px-32 lg:px-40 xl:px-56 justify-center text-center items-center h-auto my-4 md:my-10
+}
+.newest-box{
+    @apply flex flex-col gap-7 items-center
+}
+.newest-introduce{
+    @apply my-32
+}

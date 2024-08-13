@@ -8,4 +8,8 @@
 @import "../src/assets/styles/home.css";
 /* footer */
 @import "../src/assets/styles/footer.css";
+/* newest */
+@import "../src/assets/styles/newest.css";
+/* contact */
+@import "../src/assets/styles/contact.css";
 @import "tailwindcss/utilities";
