@@ -86,11 +86,11 @@ function Header() {
                         <span className={`link ${isActive === 6 ? "active" : ""}`}>ارتباط با ما</span>
                     )}
                 </h3>
-                <button onFocus={() => handleActive(7)} className={`btn btn--primary md:hidden`}>
+                <button className={`btn btn--primary md:hidden`}>
                     <NavLink to={"/contact"}>تماس با ما</NavLink>
                 </button>
             </nav>
-            <button ref={contactRef} onFocus={() => handleActive(7)} className={`btn btn--primary hidden md:block`}>
+            <button ref={contactRef} className={`btn btn--primary hidden md:block`}>
                 <NavLink to={"/contact"}>تماس با ما</NavLink>
             </button>
         </header>
