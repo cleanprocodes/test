@@ -3,81 +3,19 @@ import { ChevronLeftIcon, ChevronRightIcon, PlusSmallIcon } from '@heroicons/rea
 import Search from '../repeater/Search'
 
 
-const initialDoc = [
-    { name: "دستگاه های لیزری", count: 260 },
-    { name: "دستگاه های جوش", count: 4500 },
-    { name: "مدیریت دستگاه", count: 1200 },
-]
-
-const content = {
-    "ربات و جوش لیزر": [
-        { id: 1, title: "ربات و جوش و لیزر", src: "../../../src/assets/images/robots/robot1.png", subtitle: "ربات و جوش لیزر" }, { id: 2, title: "ربات و جوش و لیزر", src: "../../../src/assets/images/robots/robot2.png", subtitle: "ربات و جوش لیزر" }, { id: 3, title: "ربات و جوش و لیزر", src: "../../../src/assets/images/robots/robot3.png", subtitle: "ربات و جوش لیزر" }, { id: 4, title: "ربات و جوش و لیزر", src: "../../../src/assets/images/robots/robot4.png", subtitle: "ربات و جوش لیزر" }, { id: 5, title: "ربات و جوش و لیزر", src: "../../../src/assets/images/robots/robot5.png", subtitle: "ربات و جوش لیزر" }
-    ],
-    "میز اپتیکی": [
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut1.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut2.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut3.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut4.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut5.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut6.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut7.png" },
-        { id: 1, title: "میز اپتیکی ", subtitle: "میز اپتیکی ", src: "../../../src/assets/images/cutLayzer/cut8.png" },
-    ],
-    "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی ": [
-        { id: 1, title: "ربات و جوش و لیزر", subtitle: "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی", src: "../../../src/assets/images/lab/azmayesh1.png" },
-        { id: 2, title: "ربات و جوش و لیزر", subtitle: "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی", src: "../../../src/assets/images/lab/azmayesh2.png" },
-        { id: 3, title: "ربات و جوش و لیزر", subtitle: "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی", src: "../../../src/assets/images/lab/azmayesh3.png" },
-        { id: 4, title: "ربات و جوش و لیزر", subtitle: "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی", src: "../../../src/assets/images/lab/azmayesh4.png" },
-        { id: 5, title: "ربات و جوش و لیزر", subtitle: "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی", src: "../../../src/assets/images/lab/azmayesh5.png" },
-    ],
-    "برش لیزری": [
-        { id: 1, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut1.png" },
-        { id: 2, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut2.png" },
-        { id: 3, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut3.png" },
-        { id: 4, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut4.png" },
-        { id: 5, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut5.png" },
-        { id: 6, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut6.png" },
-        { id: 7, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut7.png" },
-        { id: 8, title: "ربات و جوش و لیزر", subtitle: "برش لیزری", src: "../../../src/assets/images/cutLayzer/cut8.png" },
-    ],
-    "ماشین های لیزری": [
-        { id: 1, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle1.png" },
-        { id: 2, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle2.png" },
-        { id: 3, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle3.png" },
-        { id: 4, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle4.png" },
-        { id: 5, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle5.png" },
-        { id: 6, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle6.png" },
-        { id: 7, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle7.png" },
-        { id: 8, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle8.png" },
-        { id: 9, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle9.png" },
-        { id: 10, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle10.png" },
-        { id: 11, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle11.png" },
-        { id: 12, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle12.png" },
-        { id: 13, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle13.png" },
-        { id: 14, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle14.png" },
-        { id: 15, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle15.png" },
-        { id: 16, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle16.png" },
-    ],
-    "میکسرهای بهداشتی": [
-        { id: 1, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle1.png" },
-        { id: 2, title: "ربات و جوش و لیزر", subtitle: "ماشین های لیزری", src: "../../../src/assets/images/vehicle/vehicle2.png" },
-    ],
-};
-
-
 //Product-section
-function ProductSection() {
+function ProductSection({ content }) {
+
     const [activeTab, setActiveTab] = useState(1);
     const [options, setOptions] = useState("ربات و جوش لیزر");
     const optionRefs = useRef([]);
 
     const handleOptionClick = (option, index) => {
         setActiveTab(index + 1);
-        setOptions(option)
+        setOptions(option);
         optionRefs.current[option].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        setOptions(option)
     };
-
+        
     const handlePrevPage = () => {
         setActiveTab((index) => {
             const newIndex = Math.max(index - 1, 1);
@@ -106,17 +44,18 @@ function ProductSection() {
                     <p className='description'>امروزه ماشین های سی ان سی لیزری به خوبی توانایی خود را پیشبرد صنایع دنیا در ساخت و مونتاژ و تصحیح قطعات به اثبات رسانده اند</p>
                     <button className='btn btn--primary'>اطلاعات بیشتر</button>
                     <div className='context-count'>
-                        {initialDoc.map(d => (
-                            <div className='mx-6' key={d.name}>
+                        {Object.keys(content).slice(0, 3).map(d => (
+                            <div className='mx-6' key={d}>
                                 <div className='flex items-center'>
                                     <span className='text-primary'>
                                         <PlusSmallIcon className='w-7 h-7 -ml-2 mb-1' />
                                     </span>
-                                    <span className='text-2xl font-bold'>{d.count}</span>
+                                    <span className='text-2xl font-bold'>{content[d].length}</span>
                                 </div>
-                                <span className='block -mr-3'>{d.name}</span>
+                                <span className='block -mr-3'>{d}</span>
                             </div>
-                        ))}
+                        ))
+                        }
                     </div>
                 </div>
             </section>

@@ -1,4 +1,4 @@
-import { ArrowDownCircleIcon, ArrowDownIcon, ArrowLongDownIcon } from '@heroicons/react/20/solid';
+import { ArrowLongDownIcon } from '@heroicons/react/20/solid';
 import React from 'react';
 
 function FloatUp() {

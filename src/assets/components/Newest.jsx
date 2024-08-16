@@ -10,17 +10,8 @@ const initialRobots = [
   { id: 4, title: "ربات جوش و لیزر", subtitle: "ربات جوش و لیزر", src: "../../../src/assets/images/robots/robot4.png" },
 ];
 
-const content = {
-  "ربات و جوش لیزر": [
-    { id: 1, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/images/robots/robot1.png", subtitle: "ربات و جوش لیزر" },
-    { id: 2, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/images/robots/robot2.png", subtitle: "ربات و جوش لیزر" },
-    { id: 3, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/images/robots/robot3.png", subtitle: "ربات و جوش لیزر" },
-    { id: 4, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/images/robots/robot4.png", subtitle: "ربات و جوش لیزر" },
-    { id: 5, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/images/robots/robot5.png", subtitle: "ربات و جوش لیزر" }
-  ],
-};
-
-function Newest() {
+function Newest({content}) {
+ 
   const MAX_LENGTH = 50;
   const ITEMS_PER_PAGE = 4; // تعداد آیتم‌ها در هر صفحه
 
