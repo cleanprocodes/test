@@ -61,10 +61,19 @@ const content = {
     { id: 5, title: "ربات و جوش و لیزر", subtitle: "تجهیزات آزمایشگاهی و میکسر و میز اپتیکی", src: "../../../src/assets/images/lab/azmayesh5.png" },
   ],
 };
+const videos = {
+  "ربات و جوش لیزر": [
+    { id: 1, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/videos/cnc-layzer.mp4", subtitle: "ربات و جوش لیزر" },
+    { id: 2, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/videos/cnc-layzer2.mp4", subtitle: "ربات و جوش لیزر" },
+    { id: 3, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/videos/cnc-layzer3.mp4", subtitle: "ربات و جوش لیزر" },
+    { id: 4, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/videos/cnc-layzer4.mp4", subtitle: "ربات و جوش لیزر" },
+    { id: 5, title: "ربات و جوش و لیزر", desc: "ربات های صنعتی با انعطاف و آزادی عمل فوق العاده برای ارائه میدهد.", src: "../../../src/assets/videos/cnc-layzer5.mp4", subtitle: "ربات و جوش لیزر" }
+  ],
+};
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App content={content} />
+    <App content={content} videos={videos}/>
   </React.StrictMode>,
 )

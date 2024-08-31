@@ -41,7 +41,7 @@ function Newest({content}) {
         <div className='newest-header'>
           <header className='flex gap-4 lg:gap-11 flex-col lg:flex-row items-center'>
             <div className='newest-header-boximages'>
-              <img className='lg:w-[528px] lg:h-[482px] h-[300px] object-cover bg-bgBox rounded-md' src={initialRobots.find(i => i.id === idImage)?.src || ""} alt="" />
+              <img className='lg:w-[528px] lg:h-[482px] h-[300px] object-cover bg-bgBox rounded-md' src={initialRobots.find(i => i.id === idImage)?.src || ""} alt={initialRobots.find(i => i.id === idImage)?.title || ""} />
               <div className='newest-header-images'>
                 {initialRobots.map(i => {
                   return (
@@ -55,9 +55,6 @@ function Newest({content}) {
               <p className='subheading mt-11'>امروزه رباتهای صنعتی نقشی کلیدی در بالا بردن کیفیت و تیراژ محصولات در صنایع مختلف ایفا مینمایند. بسیاری از صنایع، خطوط تولید سنتی خود را به خطوط تولید رباتیک تغییر داده و با توجه به پیچیدگی برخی کاربردها، استفاده از رباتهای صنعتی روشی بسیار کارآمدتر می باشد. یکی از کاربردهای مورد استقبال تولید کنندگان در سالهای اخیر جوشکاری لیزر رباتیک بوده که در ادامه پس از معرفی انواع لیزرهای صنعتی، به بررسی کلیه جوانب آن خواهیم پرداخت.</p>
             </div>
           </header >
-          <main>
-            {/* محتوای متنی */}
-          </main>
         </div>
         {/* description */}
         <div className='newest-description'>

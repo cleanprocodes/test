@@ -49,41 +49,44 @@ function Header() {
             </div>
             <nav className='header-navbar group'>
                 <h3>
+                    <NavLink onFocus={() => handleActive(1)} className={`link ${isActive === 1 ? "active" : ""}`} to={"/educate"}>آموزش</NavLink>
+                </h3>
+                <h3>
                     {location.pathname === '/' ? (
-                        <a onFocus={() => handleActive(1)} className={`link ${isActive === 1 ? "active" : ""}`} href="#productBox">محصولات سخت افزاری</a>
+                        <a onFocus={() => handleActive(2)} className={`link ${isActive === 2 ? "active" : ""}`} href="#productBox">محصولات سخت افزاری</a>
                     ) : (
-                        <span className={`link ${isActive === 1 ? "active" : ""}`}>محصولات سخت افزاری</span>
+                        <span className={`link ${isActive === 2 ? "active" : ""}`}>محصولات سخت افزاری</span>
                     )}
                 </h3>
                 <h3>
-                    <NavLink onFocus={() => handleActive(2)} className={`link ${isActive === 2 ? "active" : ""}`} to={"/newest"}>جدیدترین ها</NavLink>
+                    <NavLink onFocus={() => handleActive(3)} className={`link ${isActive === 3 ? "active" : ""}`} to={"/newest"}>جدیدترین ها</NavLink>
                 </h3>
                 <h3>
                     {location.pathname === '/' ? (
-                        <a onFocus={() => handleActive(3)} className={`link ${isActive === 3 ? "active" : ""}`} href="#manager">مدیریت</a>
+                        <a onFocus={() => handleActive(4)} className={`link ${isActive === 4 ? "active" : ""}`} href="#manager">مدیریت</a>
                     ) : (
-                        <span className={`link ${isActive === 3 ? "active" : ""}`}>مدیریت</span>
-                    )}
-                </h3>
-                <h3>
-                    {location.pathname === '/' ? (
-                        <a onFocus={() => handleActive(4)} className={`link ${isActive === 4 ? "active" : ""}`} href="#product">ماشین سی ان سی</a>
-                    ) : (
-                        <span className={`link ${isActive === 4 ? "active" : ""}`}>ماشین سی ان سی</span>
+                        <span className={`link ${isActive === 4 ? "active" : ""}`}>مدیریت</span>
                     )}
                 </h3>
                 <h3>
                     {location.pathname === '/' ? (
-                        <a onFocus={() => handleActive(5)} className={`link ${isActive === 5 ? "active" : ""}`} href="#services">خدمات ما</a>
+                        <a onFocus={() => handleActive(5)} className={`link ${isActive === 5 ? "active" : ""}`} href="#product">ماشین سی ان سی</a>
                     ) : (
-                        <span className={`link ${isActive === 5 ? "active" : ""}`}>خدمات ما</span>
+                        <span className={`link ${isActive === 5 ? "active" : ""}`}>ماشین سی ان سی</span>
                     )}
                 </h3>
                 <h3>
                     {location.pathname === '/' ? (
-                        <a onFocus={() => handleActive(6)} className={`link ${isActive === 6 ? "active" : ""}`} href="#connection">ارتباط با ما</a>
+                        <a onFocus={() => handleActive(6)} className={`link ${isActive === 6 ? "active" : ""}`} href="#services">خدمات ما</a>
                     ) : (
-                        <span className={`link ${isActive === 6 ? "active" : ""}`}>ارتباط با ما</span>
+                        <span className={`link ${isActive === 6 ? "active" : ""}`}>خدمات ما</span>
+                    )}
+                </h3>
+                <h3>
+                    {location.pathname === '/' ? (
+                        <a onFocus={() => handleActive(7)} className={`link ${isActive === 7 ? "active" : ""}`} href="#connection">ارتباط با ما</a>
+                    ) : (
+                        <span className={`link ${isActive === 7 ? "active" : ""}`}>ارتباط با ما</span>
                     )}
                 </h3>
                 <button className={`btn btn--primary md:hidden`}>
