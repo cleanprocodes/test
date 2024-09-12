@@ -7,7 +7,6 @@ function ProductSection({ dataJson }) {
     const [activeTab, setActiveTab] = useState(1);
     const [options, setOptions] = useState(dataJson[0].products); // Load the first category initially
     const optionRefs = useRef([]);
-    console.log(options)
 
 
     const handleOptionClick = (option, index) => {
