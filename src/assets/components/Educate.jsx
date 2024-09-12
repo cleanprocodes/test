@@ -8,15 +8,16 @@ function Educate({ dataJson }) {
     const MAX_LENGTH = 50;
     const ITEMS_PER_PAGE = 4; // تعداد آیتم‌ها در هر صفحه
 
-    const [idImage, setIdImage] = useState(1);
-    const [currentPage, setCurrentPage] = useState(1); // شماره صفحه فعلی
-
     const category = dataJson.find(item => item.name === "ربات و جوش لیزر");
     if (!category) {
         return <div>Category not found</div>;
     }
 
     const { products } = category;
+
+    // تنظیم مقدار اولیه idImage با id اولین محصول
+    const [idImage, setIdImage] = useState(products[0]?.id || null);
+    const [currentPage, setCurrentPage] = useState(1); // شماره صفحه فعلی
 
     const handleSelected = (id) => {
         setIdImage(id);
