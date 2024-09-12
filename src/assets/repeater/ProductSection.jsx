@@ -2,24 +2,25 @@ import React, { useRef, useState } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon, PlusSmallIcon } from '@heroicons/react/20/solid'
 import Search from '../repeater/Search'
 
-
 //Product-section
-function ProductSection({ content }) {
-
+function ProductSection({ dataJson }) {
     const [activeTab, setActiveTab] = useState(1);
-    const [options, setOptions] = useState("ربات و جوش لیزر");
+    const [options, setOptions] = useState(dataJson[0].products); // Load the first category initially
     const optionRefs = useRef([]);
+    console.log(options)
+
 
     const handleOptionClick = (option, index) => {
         setActiveTab(index + 1);
-        setOptions(option);
+        setOptions(dataJson[index].products); // Set products based on selected category
         optionRefs.current[option].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     };
-        
+
     const handlePrevPage = () => {
         setActiveTab((index) => {
             const newIndex = Math.max(index - 1, 1);
-            const option = Object.keys(content)[newIndex - 1];
+            const option = Object.keys(dataJson)[newIndex - 1];
+            setOptions(dataJson[newIndex - 1].products); // Update products
             optionRefs.current[option].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             return newIndex;
         });
@@ -27,8 +28,9 @@ function ProductSection({ content }) {
 
     const handleNextPage = () => {
         setActiveTab((index) => {
-            const newIndex = Math.min(index + 1, Object.keys(content).length);
-            const option = Object.keys(content)[newIndex - 1];
+            const newIndex = Math.min(index + 1, Object.keys(dataJson).length);
+            const option = Object.keys(dataJson)[newIndex - 1];
+            setOptions(dataJson[newIndex - 1].products); // Update products
             optionRefs.current[option].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             return newIndex;
         });
@@ -44,18 +46,17 @@ function ProductSection({ content }) {
                     <p className='description'>امروزه ماشین های سی ان سی لیزری به خوبی توانایی خود را پیشبرد صنایع دنیا در ساخت و مونتاژ و تصحیح قطعات به اثبات رسانده اند</p>
                     <button className='btn btn--primary'>اطلاعات بیشتر</button>
                     <div className='context-count'>
-                        {Object.keys(content).slice(0, 3).map(d => (
-                            <div className='mx-6' key={d}>
+                        {dataJson.slice(0, 3).map((item, index) => (
+                            <div className='mx-6' key={item.id}>
                                 <div className='flex items-center'>
                                     <span className='text-primary'>
                                         <PlusSmallIcon className='w-7 h-7 -ml-2 mb-1' />
                                     </span>
-                                    <span className='text-2xl font-bold'>{content[d].length}</span>
+                                    <span className='text-2xl font-bold'>{item.products.length}</span>
                                 </div>
-                                <span className='block -mr-3'>{d}</span>
+                                <span className='block -mr-3'>{item.name}</span>
                             </div>
-                        ))
-                        }
+                        ))}
                     </div>
                 </div>
             </section>
@@ -71,33 +72,31 @@ function ProductSection({ content }) {
                 </header>
                 <div className='mt-28'>
                     <div className="box-options">
-                        {Object.keys(content).map((option, index) => (
+                        {dataJson.map((option, index) => (
                             <h4
                                 key={index}
-                                ref={el => optionRefs.current[option] = el}
+                                ref={el => optionRefs.current[index] = el}
                                 className={`options h4 ${activeTab === index + 1 ? "active" : ""}`}
-                                onClick={() => handleOptionClick(option, index)}
+                                onClick={() => handleOptionClick(option.name, index)}
                             >
-                                {option}
+                                {option.name}
                             </h4>
                         ))}
                     </div>
 
                     <div className="content">
-                        {Object.keys(content).map(c =>
-                            options === c && Object.values(content)[activeTab - 1].map((c) => (
-                                <div className='box h-96' key={c.id}>
-                                    <div className='h-56 rounded-lg bg-bgBox'>
-                                        <img className='fit-image' src={c.src} alt={c.title} />
-                                    </div>
-                                    <h4 className='h4'>{c.title}</h4>
-                                    <span className='flex items-center gap-1.5'>
-                                        <span className='box-circle'></span>
-                                        <span>{c.subtitle}</span>
-                                    </span>
+                        {options.map((product) => (
+                            <div className='box h-96' key={product.id}>
+                                <div className='h-56 rounded-lg bg-bgBox'>
+                                    <img className='fit-image' src={product.src} alt={product.title} />
                                 </div>
-                            ))
-                        )}
+                                <h4 className='h4'>{product.title}</h4>
+                                <span className='flex items-center gap-1.5'>
+                                    <span className='box-circle'></span>
+                                    <span>{product.subtitle}</span>
+                                </span>
+                            </div>
+                        ))}
                     </div>
 
                     <div className='box-buttons'>
@@ -109,14 +108,14 @@ function ProductSection({ content }) {
                             <ChevronLeftIcon className='w-5 h-5 -ml-2' />
                         </button>
                         <div>
-                            {Object.keys(content).map((c, index) => (
-                                <span onClick={() => handleOptionClick(options, index)} className={`text-2xl cursor-pointer mx-3 ${index === activeTab - 1 ? "border-b" : ""}`} key={index}>{index + 1}</span>
+                            {dataJson.map((_, index) => (
+                                <span onClick={() => handleOptionClick(dataJson[index].name, index)} className={`text-2xl cursor-pointer mx-3 ${index === activeTab - 1 ? "border-b" : ""}`} key={index}>{index + 1}</span>
                             ))}
                         </div>
                         <button
-                            className={`btn flex items-center ${activeTab < Object.keys(content).length ? "active" : "disabled"}`}
+                            className={`btn flex items-center ${activeTab < dataJson.length ? "active" : "disabled"}`}
                             onClick={handleNextPage}
-                            disabled={activeTab >= Object.keys(content).length}>
+                            disabled={activeTab >= dataJson.length}>
                             <ChevronRightIcon className='w-5 h-5 -mr-2' />
                             <span>بعدی</span>
                         </button>
@@ -127,4 +126,4 @@ function ProductSection({ content }) {
     );
 }
 
-export default ProductSection
+export default ProductSection;

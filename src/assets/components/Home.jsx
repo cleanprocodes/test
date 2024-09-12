@@ -9,14 +9,13 @@ import Footer from '../repeater/Footer';
 
 
 
-function Home({content}) {
-  console.log(content);
+function Home({dataJson}) {
   
   return (
     <>
       <Header />
       <article className='relative'>
-        <ProductSection content={content}/>
+        <ProductSection dataJson={dataJson}/>
         <ManagerSection />
         <ServicesSection />
         <ConnectionSection />
