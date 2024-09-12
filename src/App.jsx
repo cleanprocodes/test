@@ -5,7 +5,7 @@ import Contact from './assets/components/Contact';
 import Newest from './assets/components/Newest';
 import Educate from './assets/components/Educate';
 
-function App({videos,dataJson }) {
+function App({dataJson }) {
   
   return (
     <>
