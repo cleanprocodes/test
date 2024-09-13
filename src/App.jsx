@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './assets/components/Home';
 import Contact from './assets/components/Contact';
 import Newest from './assets/components/Newest';
 import Educate from './assets/components/Educate';
+import dataJson from './data.json';
 
-function App({ dataJson }) {
+function App() {
+
   const [isLoading, setIsLoading] = useState(false);
   const [Products, setProducts] = useState(dataJson || []);
 
@@ -14,9 +16,6 @@ function App({ dataJson }) {
       try {
         setIsLoading(true);
         const response = await fetch('https://localhost:7179/api/Category');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -25,10 +24,7 @@ function App({ dataJson }) {
         setIsLoading(false);
       }
     }
-
-    if (!dataJson || dataJson.length === 0) {
-      populateProductsData();
-    }
+    populateProductsData();
   }, [dataJson]);
 
 
@@ -39,7 +35,6 @@ function App({ dataJson }) {
       </div>
     );
   }
-
   return (
     <>
       <Router>
@@ -51,7 +46,7 @@ function App({ dataJson }) {
         </Routes>
       </Router>
     </>
-  );
+  )
 }
 
 export default App;
